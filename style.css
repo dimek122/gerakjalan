@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #4facfe, #ffffff);
+}
+
+/* Tombol amplop */
+.envelope-btn {
+    width: 120px;
+    height: 80px;
+    background: #fff;
+    position: relative;
+    border: 2px solid #4facfe;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.envelope-btn:hover {
+    transform: scale(1.1);
+}
+
+.envelope-btn::before,
+.envelope-btn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.envelope-btn::before {
+    top: 0;
+    left: 0;
+    border-width: 40px 60px 0 60px;
+    border-color: #4facfe transparent transparent transparent;
+}
+
+.envelope-btn::after {
+    bottom: 0;
+    left: 0;
+    border-width: 0 60px 40px 60px;
+    border-color: transparent transparent #4facfe transparent;
+}
+
+/* Bingkai pesan */
+.message-box {
+    display: none;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* Animasi mengetik */
+.typing {
+    border-right: 2px solid #4facfe;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
